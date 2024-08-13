@@ -2,7 +2,7 @@
 # tasks file for httpd
 - name: Install httpd
   ansible.builtin.yum:
-    name: "{{ service_name }}"
+    name: httpd
     state: "{{ httpd_state }}"
 - name: copy custom index.html file
   ansible.builtin.copy:
