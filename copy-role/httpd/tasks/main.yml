@@ -1,0 +1,15 @@
+---
+# tasks file for httpd
+- name: Install httpd
+  ansible.builtin.yum:
+    name: "{{ service_name }}"
+    state: "{{ httpd_state }}"
+- name: copy custom index.html file
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html/index.html
+    mode: u=rw,g=r,o=r
+- name: Start service httpd, if not started
+  ansible.builtin.service:
+    name: httpd
+    state: started
