@@ -1,0 +1,8 @@
+- name: My first play
+  hosts: myhosts
+  tasks:
+    - name: Create directory named harshal
+      file:
+        path: ~/harshal
+        state: directory
+        mode : '0755'
